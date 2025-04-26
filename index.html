@@ -11,16 +11,323 @@
 
     <link rel="stylesheet" href="dist/reset.css" />
     <link rel="stylesheet" href="dist/reveal.css" />
-    <link rel="stylesheet" href="dist/theme/black.css" />
+    <link rel="stylesheet" href="dist/theme/moon.css" />
 
     <!-- Theme used for syntax highlighted code -->
     <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+    <style>
+      .two-columns {
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        align-items: center;
+      }
+      .small-text {
+        font-size: 0.8em;
+      }
+      .img-container {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+      }
+      .img-container img {
+        max-height: 300px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      .value-item {
+        margin-bottom: 15px;
+        padding-left: 10px;
+        border-left: 3px solid #ff6600;
+        font-size: 32px;
+      }
+
+      .fragment {
+        font-size: 32px;
+      }
+
+      .manifesto-wrapper {
+        display: flex;
+      }
+
+      li {
+        margin-bottom: 10px;
+      }
+
+      .frameworks {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .stat-card {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 8px;
+        margin-top: 20px;
+      }
+      .quote {
+        font-style: italic;
+        padding-left: 15px;
+        text-align: center;
+        font-size: 23px;
+        margin-bottom: 10px;
+      }
+    </style>
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
-        <section>Agile</section>
-        <section>Presentation</section>
+        <section>
+          <section>
+            <h1 style="font-size: 80px">Agile Methodology</h1>
+            <p class="fragment">From rigid plans to adaptive development</p>
+            <aside class="notes">
+              Hello everyone, today I'm going to talk about Agile - an approach
+              that has changed the way many teams build products.
+            </aside>
+          </section>
+          <section>
+            <h2 style="color: white">What is Agile?</h2>
+            <ul>
+              <li class="fragment">
+                Agile is an iterative approach to project management and
+                software development
+              </li>
+              <li class="fragment">
+                Instead of betting everything on a "big bang" launch, Agile
+                teams deliver work in small, but consumable, increments
+              </li>
+            </ul>
+            <aside class="notes">
+              Agile focuses on collaboration, flexibility, continuous
+              improvement, and high-quality results.
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <h2>The Old Way: Waterfall</h2>
+          <div class="two-columns">
+            <div>
+              <ul class="small-text">
+                <li class="fragment">Linear and sequential process</li>
+                <li class="fragment">
+                  One phase must be completed before the next begins
+                </li>
+                <li class="fragment">Heavy planning upfront</li>
+                <li class="fragment">Limited flexibility once started</li>
+              </ul>
+            </div>
+            <div class="img-container">
+              <img
+                src="./waterfall.png"
+                alt="Waterfall Phases"
+                style="max-height: 400px"
+              />
+            </div>
+          </div>
+          <aside class="notes">
+            Waterfall has been the standard for decades. All requirements are
+            collected at the beginning, then design, develop, test and release.
+            The problem is that if the requirements change, you have to start
+            over.
+          </aside>
+        </section>
+
+        <section>
+          <h2>The Problem with Waterfall</h2>
+          <div class="two-columns">
+            <div>
+              <h3 style="color: #ff6666">Waterfall Issues</h3>
+              <ul class="small-text">
+                <li class="fragment">
+                  Average 70% features unused (Standish Group)
+                </li>
+                <li class="fragment">Late discovery of problems</li>
+                <li class="fragment">Customer sees product only at the end</li>
+                <li class="fragment">Changes are extremely costly</li>
+              </ul>
+            </div>
+            <div>
+              <h3 style="color: #66ff66">Agile Solution</h3>
+              <ul class="small-text">
+                <li class="fragment">Deliver value in 2-4 week cycles</li>
+                <li class="fragment">Continuous customer feedback</li>
+                <li class="fragment">Embrace changing requirements</li>
+                <li class="fragment">Early and often testing</li>
+              </ul>
+            </div>
+          </div>
+          <div class="stat-card fragment" style="font-size: 30px">
+            <p class="small-text">Standish Group Report (2020):</p>
+            <ul class="small-text">
+              <li>Waterfall success rate: 29%</li>
+              <li>Agile success rate: 42%</li>
+            </ul>
+          </div>
+          <aside class="notes">
+            Explain how waterfall leads to late feedback. Mention the 70%
+            failure rate (Standish Group). Before Agile, most teams used a
+            traditional approach called Waterfall. In Waterfall, you plan
+            everything at the beginning, then follow the plan strictly step by
+            step.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Birth of Agile</h2>
+          <ul>
+            <li class="fragment">
+              In 2001, 17 software developers met at a ski resort
+            </li>
+            <li class="fragment">Including Martin Fowler, Kent Beck</li>
+            <li class="fragment">
+              They shared frustrations with traditional methods
+            </li>
+            <li class="fragment">And created the Manifesto in just 4 days</li>
+          </ul>
+          <div class="img-container">
+            <img src="./signing.jpg" alt="Signing the Manifesto" />
+          </div>
+          <aside class="notes">
+            In 2001, 17 software developers got together in Snowbird, Utah. They
+            discussed their struggles with Waterfall and decided to propose a
+            better way
+          </aside>
+        </section>
+
+        <section>
+          <h2>Agile Manifesto Values</h2>
+
+          <div style="text-align: left; width: 80%; margin: 0 auto">
+            <div class="quote fragment">
+              "The best architectures, requirements, and designs emerge from
+              self-organizing teams."
+              <br />- Agile Principle #11
+            </div>
+            <div class="value-item fragment">
+              <strong style="color: #ff6600"
+                >Individuals and interactions</strong
+              >
+              <span>over processes and tools</span>
+            </div>
+            <div class="value-item fragment">
+              <strong style="color: #ff6600">Working software</strong>
+              <span>over comprehensive documentation</span>
+            </div>
+            <div class="value-item fragment">
+              <strong style="color: #ff6600">Customer collaboration</strong>
+              <span>over contract negotiation</span>
+            </div>
+            <div class="value-item fragment">
+              <strong style="color: #ff6600">Responding to change</strong>
+              <span>over following a plan</span>
+            </div>
+          </div>
+
+          <aside class="notes">
+            The Agile Manifesto defined four main values — all about
+            flexibility, collaboration, and delivering real value
+          </aside>
+        </section>
+
+        <section>
+          <h2>Key Agile Principles</h2>
+          <div class="manifesto-wrapper">
+            <ol>
+              <li class="fragment">Deliver working software frequently</li>
+              <li class="fragment">Embrace changing requirements</li>
+              <li class="fragment">Work closely with customers and teams</li>
+              <li class="fragment">Reflect and improve regularly</li>
+            </ol>
+            <div class="img-container" style="margin-left: 12px">
+              <img
+                src="./manifesto.svg"
+                alt="Agile Cycle"
+                style="max-height: 400px"
+              />
+            </div>
+          </div>
+          <aside class="notes">
+            Agile promotes frequent delivery, welcomes changes at any stage,
+            encourages collaboration, and values continuous improvement
+          </aside>
+        </section>
+
+        <section>
+          <h2>Popular Agile Frameworks</h2>
+          <section>
+            <div style="margin-top: 100px">
+              <h3>Scrum</h3>
+              <div class="frameworks">
+                <ul class="small-text">
+                  <li>Sprints (2-4 weeks)</li>
+                  <li>Roles: PO, Scrum Master</li>
+                  <li>Daily standups</li>
+                </ul>
+                <div class="img-container">
+                  <img
+                    src="./scrum.png"
+                    alt="Scrum Framework"
+                    style="max-height: 320px; margin-top: 0"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div style="margin-top: 100px">
+              <h3>Kanban</h3>
+              <div class="frameworks">
+                <ul class="small-text">
+                  <li>Visual workflow</li>
+                  <li>WIP limits</li>
+                  <li>Continuous delivery</li>
+                </ul>
+                <div class="img-container">
+                  <img
+                    src="./kanban.png"
+                    alt="Kanban Board"
+                    style="max-height: 320px; margin-top: 0"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <aside class="notes">
+            Agile is not a single method — it's a mindset. There are several
+            frameworks that help teams implement Agile principles in practice
+          </aside>
+        </section>
+
+        <section>
+          <section>
+            <h2>When to Use Agile</h2>
+            <ul>
+              <li>High uncertainty projects</li>
+              <li>Rapidly changing environments</li>
+              <li>Need for customer feedback during development</li>
+            </ul>
+            <aside class="notes">
+              Agile is great when you're building something new, uncertain, or
+              where customer feedback is critical
+            </aside>
+          </section>
+          <section>
+            <h2>Conclusion</h2>
+            <ul>
+              <li>Agile helps teams stay flexible and customer-focused</li>
+              <li>It's not a magic solution — but a powerful mindset shift</li>
+              <li>Adaptation and learning are at the heart of Agile</li>
+            </ul>
+            <aside class="notes">
+              Agile is about adapting to change and delivering value
+              continuously. It's not just a process, it's a way of thinking
+            </aside>
+          </section>
+        </section>
       </div>
     </div>
 
@@ -37,6 +344,7 @@
 
         // Learn about plugins: https://revealjs.com/plugins/
         plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+        slideNumber: true,
       });
     </script>
   </body>
